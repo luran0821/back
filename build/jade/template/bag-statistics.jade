@@ -1,0 +1,46 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'bag-statistics invite-code'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  萌袋统计
+                        ul
+            .center
+                .top
+                    h4 萌袋统计
+                    select.form-control.input-sm
+                        option(value="全部") 全部
+                        option(value="系统") 系统
+                        option(value="运营") 运营
+                        option(value="用户") 用户
+                .col-lg-12
+                    table#table-statistics.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 地区
+                                th 萌袋数量
+                                th 萌币数量
+                                th 已领萌币
+                                th 已领百分比
+                                th 未领萌币
+                                th 未领百分比
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+
+block script
+    script#dotpl-statistics(type='text/x-dot-template')
+        tr
+            |{{ for(i in it) { }}
+            td {{=it[i]}}
+            |{{ } }}

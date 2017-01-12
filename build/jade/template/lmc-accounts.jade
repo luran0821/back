@@ -1,0 +1,52 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'lmc-accounts'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  查询账单
+                        ul
+            .center
+                .top
+                    input(placeholder="开始时间").picker_inquiryAmb1.form-control.input-sm
+                    input(placeholder="结束时间").picker_inquiryAmb2.form-control.input-sm
+                    select.form-control.input-sm.fl
+                        option(value="UID") UID
+                    input(placeholder="").form-control.input-sm.uid
+                    select.form-control.input-sm.fl.pay_type
+                        option(value="0") 全部支付状态
+                        option(value="1") 创建未付款
+                        option(value="2") 已经付款
+                        option(value="3") 失败
+                    .btn.btn-primary.search 查询
+                .col-lg-12
+                    table#table-accounts.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 交易发起时间
+                                th UID
+                                th 昵称
+                                th 钱包地址
+                                th LMC充值数量
+                                th 当时币价
+                                th 用户付款平台
+                                th 付款金额
+                                th LMC到账状态
+                                th LMC到账时间
+                                th 支付状态
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td

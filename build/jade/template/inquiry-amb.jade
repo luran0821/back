@@ -1,0 +1,94 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'inquiry-amb'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  校园大使统计
+                        ul
+                            li.active
+                                a(href="inquiry-amb.html") 单人查询
+                            li
+                                a(href="line-school.html") 总量查询
+                            li
+                                a(href="manage-amb.html") 大使管理
+            .center
+                .top
+                    input.condition.form-control.input-sm(placeholder="UID")
+                    input(placeholder="开始时间").picker_inquiryAmb1.form-control.input-sm
+                    input(placeholder="结束时间").picker_inquiryAmb2.form-control.input-sm
+                    .btn.btn-primary 查询
+                .col-lg-12
+                    table#table-inquiryAmb1.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th UID
+                                th 昵称
+                                th 一级人数
+                                th 二级人数
+                                th 三级人数
+                                th 四级人数
+                                th 五级人数
+                                th 六级人数
+                                th 七级人数
+                                th 八级人数
+                                th 九级人数
+                                th 十级人数
+                                th 总量
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                    table#table-inquiryAmb2.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 时间
+                                th UID
+                                th 昵称
+                                th 一级人数
+                                th 二级人数
+                                th 三级人数
+                                th 四级人数
+                                th 五级人数
+                                th 六级人数
+                                th 七级人数
+                                th 八级人数
+                                th 九级人数
+                                th 十级人数
+                                th 总量
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+block script
+    script#dotpl-inquiryAmb(type='text/x-dot-template')
+        tr
+            | {{ for(var v = 0; v<it.length; v++ ) { }}
+            td {{=it[v]}}
+            | {{ } }}

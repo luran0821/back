@@ -1,0 +1,36 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'defconf'
+block body
+    include ../modules/navigation
+        block center
+
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 地址围栏
+                        ul
+            .center
+                .eventlist
+                    .bs-docs-example(val="4")
+                        .fa.fa-trash
+                        h4 事件1
+                        ul
+                            li.top
+                                select.form-control.input-sm
+                                    option(value="not-happen") 什么也没有发生
+                                    option(value="obtain-lmc") 获得LMC
+                                    option(value="obtain-strength") 获得体力
+                                    option(value="opposite-sex") 异性用户推送
+                                input.form-control.input-sm(placeholder="min个数(整数)").isthere.from-empty.from-min
+                                input.form-control.input-sm(placeholder="max个数(整数)").isthere.from-empty.from-max
+                                input.form-control.input-sm(placeholder="请输入权重(整数)").weight.from-empty
+                                input.form-control.input-sm(placeholder="每日次数上限(空为无上限)").go-online.input-last
+                            li.notice
+                                input.from-fence.input-sm.col-lg-10(placeholder="提示文字（30个字以内）",maxlength="30").from-empty
+                                a(href="###").btn.btn-default
+                                    span 上传图片
+                                    input(class="fromfile" type='file' name="img" placeholder="上传图片")
+                .whether
+                    .btn.btn-default.determine 添加
+                    .btn.btn-default.reset  保存

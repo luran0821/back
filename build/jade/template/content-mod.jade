@@ -1,0 +1,40 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'content-mod'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 萌袋管理
+                        ul
+                            li
+            .center
+                h4 1.萌袋图标（png格式，背景半透明，尺寸100*100）
+                .bag-icon
+                    div.i-plus
+                        i.glyphicon-plus
+                        div.bgimg
+                        input.fromfile(type="file")
+                h4 2.萌袋图片（jpg格式，尺寸1080*1080，大小不得超过150k）
+                .bag-img
+                    div.i-plus
+                        i.glyphicon-plus
+                        div.bgimg
+                        input.fromfile(type="file")
+                    div.i-plus
+                        i.glyphicon-plus
+                        div.bgimg
+                        input.fromfile(type="file")
+                    div.i-plus
+                        i.glyphicon-plus
+                        div.bgimg
+                        input.fromfile(type="file")
+                h4 3.图片超链
+                input(placeholder="输入链接").href.form-control.input-sm
+                h4 4.萌袋文字（100个字以内）
+                textarea(placeholder="萌袋文字").title.input-sm.form-control
+                h4 5.文字超链
+                input(placeholder="输入链接").href.form-control.input-sm
+                .btn.btn-default 保存

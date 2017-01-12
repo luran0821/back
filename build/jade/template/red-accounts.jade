@@ -1,0 +1,42 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'red-accounts'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  查询账单
+                        ul
+            .center
+                .top
+                    input(placeholder="开始时间").picker_inquiryAmb1.form-control.input-sm
+                    input(placeholder="结束时间").picker_inquiryAmb2.form-control.input-sm
+                    p 交易类型
+                    select.form-control.input-sm.fl.type
+                        option(value="0") 全部
+                        option(value="1") 转入
+                        option(value="2") 转出
+                    select.form-control.input-sm.fl.clear_left
+                        option(value="UID") UID
+                    input(placeholder="").form-control.input-sm.uid
+                    .btn.btn-primary.search 查询
+                .col-lg-12
+                    table#table-red.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 交易时间
+                                th 平台交易类型
+                                th 交易金额
+                                th 用户昵称
+                                th UID
+                                th 用户账户余额
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td

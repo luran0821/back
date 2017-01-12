@@ -1,0 +1,94 @@
+#wrapper
+    // Navigation
+    nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+        .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href='index.html')
+                img.logo(src="../img/logo.png")
+        // /.navbar-header
+        ul.nav.navbar-top-links.navbar-right
+            li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown')
+                    i.fa.fa-user.fa-fw
+                    i.fa.fa-caret-down
+                ul.dropdown-menu.dropdown-user
+                    li
+                        a
+                            i.fa.fa-user.fa-fw
+                            |  运营甲
+                    li.divider
+                    li
+                        a(href='../login.html')
+                            i.fa.fa-sign-out.fa-fw
+                            | 登出
+        .navbar-default.sidebar(role='navigation')
+            .sidebar-nav.navbar-collapse
+                ul#side-menu.nav
+                    li
+                        a(href='###').active
+                            i.fa.fa-dashboard.fa-fw
+                            |  运营管理
+                            span.fa.arrow
+                        ul.nav.nav-second-level
+                            li
+                                a(href='./index.html') 萌袋管理
+                            li
+                                a(href='./user-manage.html') 用户管理
+                            li
+                                a(href='./bulletin-editor.html') 公告管理
+                            //li
+                            //    a(href='') 邀请码管理
+                            li
+                                a(href='./inquirie-bill.html') 查询账单
+                            li
+                                a(href='./address-fence.html') 地址围栏
+
+                    li
+                        a(href='###').active
+                            i.fa.fa-bar-chart-o.fa-fw
+                            |  统计分析
+                            span.fa.arrow
+                        ul.nav.nav-second-level
+                            li
+                                a(href='./bag-statistics.html') 萌袋统计
+                            li
+                                a(href='./user-analysis.html') 用户分析
+                            li
+                                a(href='./lmc-statistics.html') LMC统计
+                            li
+                                a(href='./Gross-statistics.html') 总量统计
+                            li
+                                a(href='./inquiry-amb.html') 校园大使统计
+                    li
+                        a(href='###').active
+                            i.fa.fa-table.fa-fw
+                            |  钱包对账
+                            span.fa.arrow
+                        ul.nav.nav-second-level
+                            li
+                                a(href='###') 钱包统计
+                            li
+                                a(href='###') 金币对账
+                    li
+                        a(href='###').active
+                            i.fa.fa-edit.fa-fw
+                            | 个人信息
+                            span.fa.arrow
+                        ul.nav.nav-second-level
+                            li
+                                a(href='./regist-admin.html') 账号管理
+                    li
+                        a(href='###').active
+                            i.fa.fa-wrench.fa-fw
+                            | 用户权限
+                            span.fa.arrow
+                        ul.nav.nav-second-level
+                            li
+                                a(href='./system-module.html') 权限管理
+
+    #page-wrapper
+        block center

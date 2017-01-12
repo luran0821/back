@@ -1,0 +1,45 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'karakters'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 权限管理
+                        ul
+                            li
+                                a(href="./system-module.html") 系统模块
+                            li.active
+                                a(href="./karakters.html") 角色组
+            .center
+                .top
+                    .add.module
+                        p 选择上级组
+                        select.form-control.input-sm
+                            option(value="")
+                        input.form-control.input-sm.moduleInformation(placeholder="角色组名称")
+                        ul
+                            li
+                                p(value="0" class="fa").fa-check
+                                div 123
+                            li
+                                p(value="0" class="fa")
+                                div 234
+                            li
+                                p(value="0" class="fa")
+                                div 34645
+                            li
+                                p(value="0" class="fa")
+                                div 45968
+
+                        .btn.btn-primary.addModule  添加角色组
+                .col-lg-12
+                    ul.nav.nav-second-level
+                        li 添加模块
+                        li 添加用户
+                .maker.none
+                    div
+                    //.btn.btn-primary 确定
+

@@ -1,0 +1,55 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'freeze-manage'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  用户管理
+                        ul
+                            li
+                                a(href="user-manage.html") 查询用户
+                            li.active
+                                a(href="freeze-manage.html") 冻结列表
+                            li
+                                a(href="spell-application.html") 解冻申请
+                            li
+                                a(href="white-list.html") 白名单
+            .center
+                .col-lg-12
+                    table#tableManage-freeze.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th UID
+                                th 昵称
+                                th 手机号
+                                th 余额
+                                th 冻结资金
+                                th 未到账资金
+                                th 未确认资金
+                                th 注册时间
+                                th 冻结
+                                th 冻结原因
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+            .maker.none
+                .out
+                    p 冻结时间 ：
+                        span
+                    p 执行者 ：
+                        span
+                    p 冻结原因 ：
+                        span
+                    .btn.btn-primary 确定

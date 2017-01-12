@@ -1,0 +1,40 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'flow-statement'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 流量对账
+                        ul
+            .center
+                .top
+                    input(placeholder="开始时间").picker_inquiryAmb1.form-control.input-sm
+                    input(placeholder="结束时间").picker_inquiryAmb2.form-control.input-sm
+                    .btn.btn-primary.search 查询
+                .col-lg-12
+                    table#table-recon.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 时间
+                                th UID
+                                th 昵称
+                                th 充值手机号
+                                th 运营商
+                                th 套餐
+                                th 消耗币量
+                                th 当时币价
+                                th 成交状态
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td

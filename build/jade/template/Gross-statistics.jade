@@ -1,0 +1,54 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'Gross-statistics'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  总量统计
+                        ul
+            .center
+                .top
+                    input(placeholder="开始时间").picker_gross1.form-control.input-sm
+                    input(placeholder="结束时间").picker_gross2.form-control.input-sm
+                    .btn.btn-primary 查询
+                .col-lg-12
+                    table#table-gross.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 时间
+                                th 总用户数
+                                th 昨日新增用户数
+                                th 实名认证用户数
+                                th 冻结用户数
+                                th 总发币量
+                                th 昨日发币量
+                                th 用户总持币量
+                                th 昨日用户总领币量
+                                th 封禁账号资产总量
+                                th 昨日APP转出币量
+                                th 购买流量回流量
+                                th 系统外转入量
+                                th 萌袋总数
+                                th 昨日新增萌袋数
+                                th 昨日用户发袋数
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td

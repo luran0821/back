@@ -1,0 +1,39 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'regist-admin'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  账号管理
+                        ul
+                            li.active
+                                a(href="regist-admin.html") 添加用户
+                            li
+                                a(href="modify-password.html") 修改密码
+            .content
+                .username
+                    p 请输入要创建的用户名
+                    input.form-control.input-sm(placeholder="用户名")
+                .usergroup
+                    p 请选择用户所属分组
+                    select.form-control.input-sm
+                        option(value="yunwei") 运维
+                        option(value="chanpin") 产品
+                        option(value="kefu") 客服
+                .userpsd
+                    p 请输入要创建的用户密码
+                    input.form-control.input-sm(placeholder="用户密码" type="password")
+                .userpsd2
+                    p 再次确认密码
+                    input.form-control.input-sm(placeholder="确认密码" type="password")
+                .phonenum
+                    p 请输入联系手机号
+                    input.form-control.input-sm(placeholder="用户手机号")
+                .useremail
+                    p 请输入联系邮箱
+                    input.form-control.input-sm(placeholder="用户邮箱")
+                .btn.btn-primary.btn-pull
+                    | 提交信息

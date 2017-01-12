@@ -1,0 +1,36 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'delete-bulletin'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  公告管理
+                        ul
+                            li
+                                a(href="./bulletin-editor.html") 发布公告
+                            li.active
+                                a(href="./delete-bulletin.html") 修改公告
+                            li
+                                a(href="javascript:void(0);") 分享文字
+            .center
+                .col-lg-12
+                    table#table-delete.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 标题
+                                th 发布人
+                                th 上线时间
+                                th 下线时间
+                                th 置顶
+                                th 管理
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td

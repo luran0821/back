@@ -1,0 +1,33 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'manage-amb'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  校园大使统计
+                        ul
+                            li
+                                a(href="inquiry-amb.html") 单人查询
+                            li
+                                a(href="line-school.html") 总量查询
+                            li.active
+                                a(href="manage-amb.html") 大使管理
+            .center
+                .top
+                    .btn.btn-default.btn-primary
+                        a(href="manage-amb.html" style="color:#fff")
+                            | 添加
+                    .btn.btn-default
+                        a(href="manage-inquiryamb.html")
+                            | 查询
+                .content
+                    .searchuid
+                        p 请输入需要添加的校园大使UID
+                        input.form-control.input-sm
+                    .textarea
+                        p 请输入备注
+                        textarea.form-control.input-sm(cols="40" rows="4" placeholder="限一百字")
+                    .btn.btn-pull.btn-primary 添加

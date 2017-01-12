@@ -1,0 +1,72 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'manage-inquiryamb'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  校园大使统计
+                        ul
+                            li
+                                a(href="inquiry-amb.html") 单人查询
+                            li
+                                a(href="line-school.html") 总量查询
+                            li.active
+                                a(href="manage-amb.html") 大使管理
+            .center
+                .top
+                    .btn.btn-default
+                        a(href="manage-amb.html" )
+                            | 添加
+                    .btn.btn-default.btn-primary
+                        a(href="manage-inquiryamb.html" style="color:#fff")
+                            | 查询
+                .content
+                    .searchuid
+                        select.form-control.input-sm
+                            option(value="user_name") 用户名
+                            option(value="uid") UID
+                        input.form-control.input-sm
+                        .btn.btn-primary 查询
+                    .col-lg-12
+                        table#table-inquiryamb.table.table-bordered.table-hover.dataTable.no-footer
+                            thead
+                                tr
+                                    th UID
+                                    th 昵称
+                                    th 添加时间
+                                    th 添加人
+                                    th 备注
+                                    th 管理
+                            tbody#tbody
+                                tr.gradeA
+                                    td
+                                    td
+                                    td
+                                    td
+                                    td
+                                    td
+            .maker.none
+                .out
+                    p
+                    .btn.btn-primary.btn-right 确定
+block script
+    script#dotpl-inquiryamb(type='text/x-dot-template')
+        | {{ for(var v = 0; v<it[0].length; v++ ) { }}
+        tr
+            | {{ for(var i = 0; i<it.length; i++ ) { }}
+            | {{ if(i==it.length-2) {}}
+            td
+                .btn.btn-primary.reason(data_reason='{{=it[i][v]}}') 查看详情
+            | {{ }else if(i==it.length-1){ }}
+            td
+                .btn.btn-primary.btn-danger.remove(data_remove='{{=it[0][v]}}') 移除
+            | {{ }else{ }}
+            td {{=it[i][v]}}
+            | {{ } }}
+            |{{ } }}
+
+
+        |{{ } }}

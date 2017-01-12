@@ -1,0 +1,59 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'inquiry-bag'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 萌袋管理
+                        ul
+                            li
+                                a(href="index.html") 发布萌袋
+                            li.active
+                                a(href="inquiry-bag.html") 查询萌袋
+                            li
+                                a(href="bag-ranking.html") 萌袋余额排行
+            .center
+                .top
+                    .select.fl
+                        select.form-control.input-sm
+                            option(value="title") 萌袋名
+                            option(value="uid") UID
+                        input.input-sm.form-control
+                        .btn.btn-primary.btn-inquiryBag 查询
+                .col-lg-12
+                    table#table-inquiryBag.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 发布者
+                                th 萌袋名
+                                th 萌袋余额
+                                th 萌袋总量
+                                th 已捡人数
+                                th 总人数
+                                th 发出时间
+                                th 有效时间
+                                th 坐标
+                                td 领取人数
+                                td 删除
+                                td 下榜
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                    .maker.none
+                        .out
+                            p
+                            .btn.btn-primary 确定

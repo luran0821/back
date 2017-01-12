@@ -1,0 +1,19 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'user-analysis'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header LMC统计
+                        ul
+                            li.active
+                                a(href="javascript:void(0);") 发行统计
+                            li
+                                a(href="javascript:void(0);") 转账统计
+                            li
+                                a(href="./receive-lmc.html") 用户持币统计
+                            li
+                                a(href="javascript:void(0);") 用户领币统计

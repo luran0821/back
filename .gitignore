@@ -1,0 +1,5 @@
+/node_modules/
+/*.json
+!package.json
+/js/common/configuration.js
+/allocation.json

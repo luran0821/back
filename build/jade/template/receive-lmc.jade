@@ -1,0 +1,73 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'receive-lmc'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header LMC统计
+                        ul
+                            li
+                                a(href="./lmc-statistics.html") 发行统计
+                            li
+                                a(href="javascript:void(0);") 转账统计
+                            li.active
+                                a(href="javascript:void(0);") 用户持币统计
+                            li
+                                a(href="javascript:void(0);") 用户领币统计
+            .center
+                .col-lg-12
+                    .arraycut.none
+                        ul.arraycut_interval
+                        ul.arraycut_value
+                    table#table-arraycut.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                                th
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                    #main_echarts
+                    table#table-receive.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 序号
+                                th 用户名
+                                th UID
+                                th 持币量
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+
+block script
+    script#dotpl-receive(type='text/x-dot-template')
+        |{{ for(i in it.u_balance) { }}
+        tr
+            td {{=it.u_index[i]}}
+            td {{=it.u_username[i]}}
+            td {{=it.u_id[i]}}
+            td {{=it.u_balance[i]}}
+        |{{ } }}

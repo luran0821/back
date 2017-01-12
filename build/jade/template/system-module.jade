@@ -1,0 +1,29 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'jurisdiction'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 权限管理
+                        ul
+                            li.active
+                                a(href="./system-module.html") 系统模块
+                            li
+                                a(href="./karakters.html") 角色组
+            .center
+                .top
+                    .add.module
+                        p 选择父级模块
+                        select.form-control.input-sm
+                            option(value="")
+                        input.form-control.input-sm.moduleInformation(placeholder="系统模块信息")
+                        input.form-control.input-sm.modulePath(placeholder="URL")
+                        .btn.btn-primary.addModule  添加模块
+                .col-lg-12
+                   ul.nav.nav-second-level
+                       li 添加模块
+                       li 添加用户
+

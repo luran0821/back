@@ -1,0 +1,29 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'invite-code'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  邀请码管理
+                        ul
+            .center
+                .generate
+                    input.form-control.input-sm(placeholder="生成个数")
+                    .btn.btn-primary.btn-block  生成邀请码
+                .col-lg-9
+                    table#invite.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 邀请码
+                        tbody#tbody
+                            tr.gradeA
+                                td 什么也没有
+block script
+    script#dotpl-invite(type='text/x-dot-template')
+        |{{ for(i in it.DATA) { }}
+        tr
+            td {{=it.DATA[i]}}
+        |{{ } }}

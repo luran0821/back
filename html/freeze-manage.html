@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN" id="htmlid">
+  <head>
+    <meta charset="utf-8">
+    <title>后台管理</title>
+    <style>
+      html {
+          display: none
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrapValidator.min.css">
+    <!--script(type='text/javascript', src='#{d_url}ajaxadr/ajaxcdr.js')-->
+  </head>
+  <body class="freeze-manage">
+    <div id="wrapper">
+      <!-- Navigation-->
+      <nav role="navigation" style="margin-bottom: 0" class="navbar navbar-default navbar-static-top">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.html" class="navbar-brand"><img src="../img/logo.png" class="logo"></a>
+        </div>
+        <!-- /.navbar-header-->
+        <ul class="nav navbar-top-links navbar-right">
+          <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown-menu dropdown-user">
+              <li><a><i class="fa fa-user fa-fw"></i> 运营甲</a></li>
+              <li class="divider"></li>
+              <li><a href="../login.html"><i class="fa fa-sign-out fa-fw"></i>登出</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div role="navigation" class="navbar-default sidebar">
+          <div class="sidebar-nav navbar-collapse">
+            <ul id="side-menu" class="nav">
+              <li><a href="###" class="active"><i class="fa fa-dashboard fa-fw"></i> 运营管理<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li><a href="./index.html">萌袋管理</a></li>
+                  <li><a href="./user-manage.html">用户管理</a></li>
+                  <li><a href="./bulletin-editor.html">公告管理</a></li>
+                  <!--li-->
+                  <!--    a(href='') 邀请码管理-->
+                  <li><a href="./inquirie-bill.html">查询账单</a></li>
+                  <li><a href="./address-fence.html">地址围栏</a></li>
+                </ul>
+              </li>
+              <li><a href="###" class="active"><i class="fa fa-bar-chart-o fa-fw"></i> 统计分析<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li><a href="./bag-statistics.html">萌袋统计</a></li>
+                  <li><a href="./user-analysis.html">用户分析</a></li>
+                  <li><a href="./lmc-statistics.html">LMC统计</a></li>
+                  <li><a href="./Gross-statistics.html">总量统计</a></li>
+                  <li><a href="./inquiry-amb.html">校园大使统计</a></li>
+                </ul>
+              </li>
+              <li><a href="###" class="active"><i class="fa fa-table fa-fw"></i> 钱包对账<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li><a href="###">钱包统计</a></li>
+                  <li><a href="###">金币对账</a></li>
+                </ul>
+              </li>
+              <li><a href="###" class="active"><i class="fa fa-edit fa-fw"></i>个人信息<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li><a href="./regist-admin.html">账号管理</a></li>
+                </ul>
+              </li>
+              <li><a href="###" class="active"><i class="fa fa-wrench fa-fw"></i>用户权限<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li><a href="./system-module.html">权限管理</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="page-wrapper">
+        <div class="title">
+          <div class="row">
+            <div class="col-lg-12">
+              <h4 class="page-header"> 用户管理</h4>
+              <ul>
+                <li><a href="user-manage.html">查询用户</a></li>
+                <li class="active"><a href="freeze-manage.html">冻结列表</a></li>
+                <li><a href="spell-application.html">解冻申请</a></li>
+                <li><a href="white-list.html">白名单</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="center">
+          <div class="col-lg-12">
+            <table id="tableManage-freeze" class="table table-bordered table-hover dataTable no-footer">
+              <thead>
+                <tr>
+                  <th>UID</th>
+                  <th>昵称</th>
+                  <th>手机号</th>
+                  <th>余额</th>
+                  <th>冻结资金</th>
+                  <th>未到账资金</th>
+                  <th>未确认资金</th>
+                  <th>注册时间</th>
+                  <th>冻结</th>
+                  <th>冻结原因</th>
+                </tr>
+              </thead>
+              <tbody id="tbody">
+                <tr class="gradeA">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="maker none">
+          <div class="out">
+            <p>冻结时间 ：<span></span></p>
+            <p>执行者 ：<span></span></p>
+            <p>冻结原因 ：<span></span></p>
+            <div class="btn btn-primary">确定</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&amp;key=b369e469cd8f4da7d948f6b03355904c"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="../js/dot.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="../js/webpack/bundle1484242251712.js"></script>
+  </body>
+</html>

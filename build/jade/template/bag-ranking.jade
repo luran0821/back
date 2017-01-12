@@ -1,0 +1,50 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'bag-ranking'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 萌袋管理
+                        ul
+                            li
+                                a(href="index.html") 发布萌袋
+                            li
+                                a(href="inquiry-bag.html") 查询萌袋
+                            li.active
+                                a(href="bag-ranking.html") 萌袋余额排行
+            .center
+                .col-lg-12
+                    table#table-ranking.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 发布者
+                                th 萌袋名
+                                th 萌袋余额
+                                th 萌袋总量
+                                th 已捡人数
+                                th 总人数
+                                th 发出时间
+                                th 有效时间
+                                th 坐标
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+block script
+    script#dotpl-ranking(type='text/x-dot-template')
+        |{{ for(var i=0;i<=it[0].length-1;i++) { }}
+        tr
+            | {{ for(var v=0; v<it.length; v++ ) { }}
+            td {{=it[v][i]}}
+            | {{ } }}
+        |{{ } }}

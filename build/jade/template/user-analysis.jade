@@ -1,0 +1,15 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'user-analysis'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 用户分析
+                        ul
+                            li.active
+                                a(href="javascript:void(0);") 用户统计
+                            li
+                                a(href="./line-statistics.html") 下线统计

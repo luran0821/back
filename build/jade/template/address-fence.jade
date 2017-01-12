@@ -1,0 +1,119 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'addressfance'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 地址围栏
+                        ul
+                            li.active
+                                a(href="address-fence.html") 发布围栏
+            .center
+                .top
+                    div
+                        ul
+                            li
+                                h4 围栏备注
+                                input.form-control(type="text" placeholder="30个字符以内",maxlength="30")
+                            li.time.fl
+                                h4 上线时间
+                                input(placeholder="上线时间").datetimepicker_mask.form-control.input-sm
+                            li
+                                h4 有效期（天）
+                                input.form-control(type="text" style="ime-mode:disabled;" onpaste="return false;" placeholder="1-99999999",maxlength="8")
+                            li
+                                h4 围栏半径(m)
+                                input.form-control(type="text" placeholder="100-1000(整数)",maxlength="10")
+                            li
+                                h4 围栏图标(不上传使用默认图标)
+                                div(class="from1")
+                                    div.i-plus
+                                        i.glyphicon-plus
+                                        div.bgimg
+                                    a(href="###").btn.btn-default
+                                        span 上传图片
+                                        input(class="fromfile glyphicon" type='file' name="img")
+                        ul
+                            //li.time.fl
+                            //    h4 围栏可视范围(km)
+                            //    input.form-control(type="text" placeholder="整数",maxlength="10")
+                            //li
+                            //    h4 围栏图标(不上传使用默认图标)
+                            //    div(class="from1")
+                            //        div.i-plus
+                            //            i.glyphicon-plus
+                            //            div.bgimg
+                            //        a(href="###").btn.btn-default
+                            //            span 上传图片
+                            //            input(class="fromfile glyphicon" type='file' name="img")
+                    .btn.btn-group.btn-block.btn-primary 放置
+                .fancemap#fancemap
+                    #myPageTop
+                        table
+                            tr
+                                td
+                                    label 请输入关键字：
+                            tr
+                                td
+                                    input#tipinput
+            .line
+            .commontips
+                h4 常用提示
+                ul.tips
+                    li
+                        p 1.点击地址围栏
+                        input.from-fence(type="text" placeholder="提示文字(30字以内)",maxlength="30").col-lg-10
+                        a(href="###").btn.btn-default
+                            span 上传图片
+                            input(class="fromfile" type='file' name="img" value="上传图片")
+                    li
+                        p 2.进入地址围栏
+                        input.from-fence(type="text" placeholder="提示文字(30字以内)",maxlength="30").col-lg-10
+                        a(href="###").btn.btn-default
+                            span 上传图片
+                            input(class="fromfile" type='file' name="img" value="上传图片")
+                    li
+                        p 3.离开地址围栏
+                        input.from-fence(type="text" placeholder="提示文字(30字以内)",maxlength="30").col-lg-10
+                        a(href="###").btn.btn-default
+                            span 上传图片
+                            input(class="fromfile" type='file' name="img" placeholder="上传图片")
+                .pour
+                    p 注：此处均为必填项，图片尺寸890*580，jpg格式，文件大小不能超过150k
+                    span.line
+                    p 围栏内探索事件配置（此处不配置，会使用探索事件默认配置）
+                .eventlist
+                    .bs-docs-example(val="4")
+                        .fa.fa-trash
+                        h4 事件1
+                        ul
+                            li.top
+                                select.form-control.input-sm
+                                    option(value="not-happen") 什么也没有发生
+                                    option(value="obtain-lmc") 获得LMC
+                                    option(value="obtain-strength") 获得体力
+                                    option(value="opposite-sex") 异性用户推送
+                                input.form-control.input-sm(placeholder="min个数(整数)").isthere.from-empty.from-min
+                                input.form-control.input-sm(placeholder="max个数(整数)").isthere.from-empty.from-max
+                                input.form-control.input-sm(placeholder="请输入权重(整数)").weight.from-empty
+                                input.form-control.input-sm(placeholder="每日次数上限(空为无上限)").go-online.input-last
+                            li.notice
+                                input.from-fence.input-sm.col-lg-10(placeholder="提示文字（30个字以内）",maxlength="30").from-empty
+                                a(href="###").btn.btn-default
+                                    span 上传图片
+                                    input(class="fromfile" type='file' name="img" placeholder="上传图片")
+                .btn-bottom.btn.btn-block.btn-default.add-new.determine 添加新事件
+                .line
+
+                .whether
+                    .btn.btn-default 重置
+                    .btn.btn-default.reset  保存
+        //.maker.none
+            //    .out
+            //        p 发布成功
+            //        .btn.btn-primary 确定
+
+

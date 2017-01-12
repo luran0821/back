@@ -1,0 +1,16 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'show'
+block head
+    meta(name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")
+block body
+    .view
+        .page
+            .list
+                a.card(href='./announcement.html')
+                    .card-footer
+                        .info
+                            p.title 公告标题
+                            p.date 2016/01/01
+                            img.angle-right(src='../img/angle-right.png')
+

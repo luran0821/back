@@ -1,0 +1,34 @@
+doctype html
+block html
+case isIndex
+    when 1
+        -var d_url = './js/'
+        -var c_url = './'
+    default
+        -var d_url = '../js/'
+        -var c_url = '../'
+html(class= htmlclass,lang="zh-CN",id="htmlid")
+    head
+        meta( charset='utf-8')
+        block head
+            title 后台管理
+        style.
+            html {
+                display: none
+            }
+        link(rel="stylesheet",type='text/css',href='#{c_url}css/font-awesome.min.css')
+        link(rel="stylesheet",type='text/css',href='#{c_url}css/bootstrap.min.css')
+        link(rel="stylesheet",type='text/css',href='#{c_url}css/dataTables.bootstrap.min.css')
+        link(rel="stylesheet",type='text/css',href='#{c_url}css/bootstrapValidator.min.css')
+        //script(type='text/javascript', src='#{d_url}ajaxadr/ajaxcdr.js')
+    body(class= bodyClass)
+        block body
+        script(type="text/javascript", src="https://webapi.amap.com/maps?v=1.3&key=b369e469cd8f4da7d948f6b03355904c")
+        script(type='text/javascript', src='#{d_url}jquery.js')
+        script(type='text/javascript', src='#{d_url}jquery.dataTables.min.js')
+        script(type='text/javascript', src='#{d_url}dataTables.bootstrap.js')
+        script(type='text/javascript', src='#{d_url}dot.js')
+        script(type='text/javascript', src='#{d_url}clipboard.min.js')
+        script(type='text/javascript', src='#{d_url}bootstrapValidator.min.js')
+        script(type='text/javascript', src='#{d_url}webpack/bundle1484242251712.js')
+        block script

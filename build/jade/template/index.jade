@@ -1,0 +1,80 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'index'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 萌袋管理
+                        ul
+                            li.active
+                                a(href="index.html") 发布萌袋
+                            li
+                                a(href="inquiry-bag.html") 查询萌袋
+                            li
+                                a(href="bag-ranking.html") 萌袋余额排行
+            .center
+                .top
+                    div
+                        ul
+                            li
+                                h4 萌袋标题
+                                input.form-control(type="text" placeholder="10字之内",maxlength="10")
+                            li
+                                h4 LMC数量（个）
+                                input.form-control(type="text" style="ime-mode:disabled;" onpaste="return false;" placeholder="10-10000",maxlength="5")
+                            li
+                                h4 限领人数（人
+                                input.form-control(type="text" style="ime-mode:disabled;" onpaste="return false;" placeholder="2-100",maxlength="3",minlength="4")
+                            li
+                                h4 有效期（天）
+                                input.form-control(type="text" style="ime-mode:disabled;" onpaste="return false;" placeholder="1-99999999",maxlength="8")
+                        .time.fl
+                            h4 上线时间
+                            input(placeholder="上线时间").datetimepicker_mask.form-control.input-sm
+                        .textarea.fl
+                            h4 萌袋附言
+                            textarea.input-sm.form-control
+                        .addimg
+                            h4 萌袋附图（jpg、png，大小限2m）
+                            div(class="from1")
+                                div.i-plus
+                                    i.glyphicon-plus
+                                    div.bgimg
+                                a(href="###" class="btn btn-default")
+                                    span 上传图片
+                                    input(type="file" name="img" class="fromfile")
+                            div(class="from1")
+                                div.i-plus
+                                    i.glyphicon-plus
+                                    div.bgimg
+                                a(href="###" class="btn btn-default")
+                                    span 上传图片
+                                    input(type="file" name="img" class="fromfile")
+                            div(class="from1")
+                                div.i-plus
+                                    i.glyphicon-plus
+                                    div.bgimg
+                                a(href="###" class="btn btn-default")
+                                    span 上传图片
+                                    input(type="file" name="img" class="fromfile")
+                    .btn.btn-group.btn-block.btn-primary 放置
+                .map#map
+                    #myPageTop
+                        table
+                            tr
+                                td
+                                    label 请输入关键字：
+                            tr
+                                td
+                                    input#tipinput
+
+                .btn-bottom.btn.btn-block.btn-primary.preserved 保存
+            .maker.none
+                .out
+                    p 发布成功
+                    .btn.btn-primary 确定
+
+

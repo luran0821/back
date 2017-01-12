@@ -1,0 +1,55 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'line-school'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  校园大使统计
+                        ul
+                            li
+                                a(href="inquiry-amb.html") 单人查询
+                            li.active
+                                a(href="line-school.html") 总量查询
+                            li
+                                a(href="manage-amb.html") 大使管理
+            .center
+                .top
+                    input.form-control.input-sm(placeholder="UID")
+                    .btn.btn-primary 查询
+                .col-lg-12
+                    table#table-school.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 一级人数
+                                th 二级人数
+                                th 三级人数
+                                th 四级人数
+                                th 五级人数
+                                th 六级人数
+                                th 七级人数
+                                th 八级人数
+                                th 九级人数
+                                th 十级人数
+                                th 总量
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+block script
+    script#dotpl-school(type='text/x-dot-template')
+        tr
+            | {{ for(var v = 0; v<it.length; v++ ) { }}
+            td {{=it[v]}}
+            | {{ } }}

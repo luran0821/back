@@ -1,0 +1,44 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'reconciliation-gold'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  账号管理
+                        ul
+                            li.active
+                                a(href="reconciliation-gold.html") 发币记录对账
+            .center
+                .col-lg-12
+                    table#table-recongold.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 发布者
+                                th 萌袋名
+                                th 萌袋余额
+                                th 萌袋总量
+                                th 已捡人数
+                                th 总人数
+                                th 发出时间
+                                th 有效时间
+                                th 坐标
+                                td 领取人数
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                    .maker.none
+                        .out
+                            p
+                            .btn.btn-primary 确定

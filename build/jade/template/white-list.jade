@@ -1,0 +1,66 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'white-list'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  用户管理
+                        ul
+                            li
+                                a(href="user-manage.html") 查询用户
+                            li
+                                a(href="freeze-manage.html") 冻结列表
+                            li
+                                a(href="spell-application.html") 解冻申请
+                            li.active
+                                a(href="white-list.html") 白名单
+            .center
+                .top
+                    .btn.btn-default.btn-primary
+                        a(href="white-list.html" style="color:#fff")
+                            | 添加
+                    .btn.btn-default
+                        a(href="white-query.html")
+                            | 查询
+                .content
+                    .searchuid
+                        p 请输入要加入白名单的UID
+                        input.form-control.input-sm
+                    .checkbox
+                        h5 选择权限
+                        div
+                            p(value="0").fa
+                            | 风控接口调用- Token 有效性
+                        div
+                            p(value="1").fa
+                            | 风控接口调用- Login 登陆
+                        div
+                            p(value="2").fa
+                            | 风控接口调用- Sign 签到
+                        div
+                            p(value="3").fa
+                            | 风控接口调用- Report 报告地址位置
+                        div
+                            p(value="4").fa
+                            | 风控接口调用- BindPhone 绑定手机号
+                        div
+                            p(value="5").fa
+                            | 风控接口调用- BindIDCard 绑定身份证号
+                        div
+                            p(value="6").fa
+                            | 风控接口调用- Trans 转账
+                    .textarea
+                        p 请输入加入白名单理由
+                        textarea.form-control.input-sm(cols="40" rows="4" placeholder="限一百字")
+                    .btn.btn-primary.btn-pull  提交
+            .maker.none
+                .out
+                    p 是否确认提交
+                    .btn.btn-primary.btn-cancel 取消
+                    .btn.btn-primary.btn-right 确定
+
+
+

@@ -1,0 +1,43 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'lmc-reconciliation'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header LMC统计
+                        ul
+            .center
+                .top
+                    input.condition.form-control.input-sm(placeholder="UID")
+                    input(placeholder="开始时间").picker_inquiryAmb1.form-control.input-sm
+                    input(placeholder="结束时间").picker_inquiryAmb2.form-control.input-sm
+                    .btn.btn-primary.search 查询
+                .col-lg-12
+                    table#table-recon.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 错误信息ID
+                                th 接收者用户ID
+                                th 转账者用户ID
+                                th LBS币数
+                                th 钱包币数
+                                th 来源
+                                th 状态
+                                th 操作员
+                                th 错误类型
+                                th 创建时间
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td

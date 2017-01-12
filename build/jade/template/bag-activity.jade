@@ -1,0 +1,54 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'bag-activity'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  活动红包
+                    ul.tab
+                        li.active
+                            a(href="javascript:;").create  红包创建
+                        li#bag-manage
+                            a(href="javascript:;").manage  红包管理
+            .center
+                .row
+                  .col-lg-12.create
+                      form.form-horizontal#defaultForm
+                          .form-group
+                              label.col-sm-4.control-label 请输入红包领取人数
+                              .col-sm-4.people-num
+                                  input.form-control#people-num(placeholder="请输入整数",name="people")
+                          .form-group
+                              label.col-sm-4.control-label 请输入单人领取币量
+                              .col-sm-4.coin-num
+                                  input.form-control#coin-num(placeholder="请输入整数",name="coin")
+                          .form-group
+                              label.col-sm-4.control-label 请输入渠道id
+                              .col-sm-4.channel-id
+                                  input.form-control#channel-id(placeholder="请输入渠道id",name="id")
+                          .form-group
+                              .col-sm-offset-4.col-sm-6
+                                  button(type="submit",disabled="false").btn.btn-default#btn-submit  生成红包链接
+                .row
+                  .col-lg-12
+                      #addess-url.none
+                .row.bagactivity-manage
+                  .col-lg-12.manage.none
+                      table#table-bgrecon.table.table-bordered.table-hover.dataTable.no-footer
+                          thead
+                              tr
+                                  th 序号
+                                  th 创建时间
+                                  th 创建人
+                                  th 领取人数
+                                  th 单人币量
+                                  th 渠道id
+                                  th 已领人数
+                                  th 红包链接
+                                  th 红包管理
+                          tbody#tbody
+
+

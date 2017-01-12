@@ -1,0 +1,45 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'fence-manage'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 地址围栏
+                        ul
+            .center
+                .col-lg-12
+                    table#table-fence.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 上线时间
+                                th 事件备注
+                                th 位置
+                                th 围栏半径
+                                th 可视范围
+                                th 参与人数
+                                th 添加人
+                                th 操作
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                .maker.none
+                    .out
+                        p 发布成功
+                        .btn.btn-primary 确定
+                .maker2.none
+                    .out
+                        p 是否确认终止,
+                            br
+                            | 终止后将无法再次开启
+                        .btn.btn-primary.btn-cancel 取消
+                        .btn.btn-primary.btn-right 确定

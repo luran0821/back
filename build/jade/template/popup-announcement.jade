@@ -1,0 +1,35 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'popup-announ'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 公告管理
+                        ul
+                            li
+                                a(href="bulletin-editor.html") 公告编辑
+                            li
+                                a(href="delete-bulletin.html") 公告删除
+                            li.active
+                                a(href="popup-announcement.html") 弹窗公告
+            .center
+                h4 1.公告图片（图片尺寸890*580，jpg格式，文件大小不能超过150k）
+                div.i-plus
+                    i.glyphicon-plus
+                    div.bgimg
+                    input.fromfile(type="file")
+                h4 2.公告文字（30个字以内
+                textarea.title.input-sm.form-control.isempty(maxlength="30")
+                h4 3.按键跳转
+                .runto
+                    select.form-control.input-sm
+                        option(value="1") 链接
+                        option(value="2") 发布普通萌袋
+                        option(value="3") 排行
+                    input(placeholder="输入链接").form-control.input-sm
+                h4 4.推送天数
+                input.days_num.form-control.input-sm.isempty
+                .btn.btn-default 保存

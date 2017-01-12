@@ -1,0 +1,60 @@
+extends ../layout/layout
+block head
+    script(type='text/javascript', charset='utf-8', src='../ue/third-party/jquery-1.10.2.min.js')
+    script(type='text/javascript', charset='utf-8', src='../ue/ueditor.config.js')
+    script(type='text/javascript', charset='utf-8', src='../ue/ueditor.all.js')
+    script(type='text/javascript', charset='utf-8', src='../ue/lang/zh-cn/zh-cn.js')
+block html
+    -var bodyClass = 'all-statistics bulletin-editor'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  公告管理
+                        ul
+                            li.active
+                                a(href="./bulletin-editor.html") 发布公告
+                            li
+                                a(href="./delete-bulletin.html") 修改公告
+                            li
+                                a(href="javascript:void(0);") 分享文字
+            .top
+                ul
+                    li.title
+                        p 标题
+                        input.form-control(type="text",placeholder="公告标题")
+                    li.whether
+                        p 对象
+                        select.form-control.input-sm
+                            option(value="所有") 所有
+                            option(value="vip1") vip1
+                    li.whether.isTop
+                        p 置顶
+                        select.form-control.input-sm
+                            option(value="否") 否
+                            option(value="是") 是
+                    li.publishTime
+                        .time.fl
+                            p 上线时间
+                            input(placeholder="上线时间").datetimepicker_bulletin1.form-control.input-sm
+                    li.offTime
+                        .time.fl
+                            p 下线时间
+                            input(placeholder="下线时间").datetimepicker_bulletin2.form-control.input-sm
+                .ued
+                    div
+                        script#editor(type='text/plain', style='width:320px;height:320px;').
+                    //.btn.btn-primary 提交
+            .center
+                .uploadimg
+                    .imghref(style="background-image:url(../img/details.jpg);background-size:cover;background-position:center,center")
+                    input(type="file")
+                    p 图片链接
+                .covers
+                    h4 封面图片
+                    .image(style="background-image:url(../img/details.jpg);background-size:cover;background-position:center,center")
+                    input(type="file")
+            .block
+                .btn-primary.btn.preserved 上传公告

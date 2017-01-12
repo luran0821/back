@@ -1,0 +1,100 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'spell-application'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  用户管理
+                        ul
+                            li
+                                a(href="user-manage.html") 查询用户
+                            li
+                                a(href="freeze-manage.html") 冻结列表
+                            li.active
+                                a(href="spell-application.html") 解冻申请
+                            li
+                                a(href="white-list.html") 白名单
+            .center
+                .top
+                    .btn.btn-default.btn-primary
+                        | 未处理
+                    .btn.btn-default
+                        | 已解冻
+                    .btn.btn-default
+                        | 已驳回
+                .col-lg-12
+                    table#tableManage-spell.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 申诉时间
+                                th UID
+                                th 昵称
+                                th 手机号
+                                th 实名认证姓名
+                                th 身份证号
+                                th 冻结原因
+                                th 解冻申请
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                                td
+                .col-lg-9.none
+                    div
+                        ul
+                            li
+                                div 提交日期
+                                div 2016-6-12
+                            li
+                                div 昵称
+                                div 西坝河男
+                            li
+                                div 申诉说明
+                                div a读后噶老姑娘浪拉斯贵啦啦啦赶紧拉垃圾
+
+                            li
+                                div 绑定手机号
+                                div 13911111111
+                            li
+                                div 姓名
+                                div 很舒服
+                            li
+                                div 身份证号
+                                div 2103524624636346346346
+                            li
+                                div 联系方式
+                                div 13911111111
+                            li.bindidimg
+                                div 身份证照片
+                                div
+                                    p
+                                        img(src="../img/details.jpg").visibility
+                                        img(src="../img/details.jpg").visibility
+                                        img(src="../img/details.jpg").visibility
+                            li.recovery
+                                div 处理
+                                div
+                                    textarea.input-sm.form-control
+                                    p.choice
+                                        span.btn.btn-primary.thawing 解冻
+                                        span.btn.btn-primary.reject 驳回
+                            div.bigimg.none
+                                img(src="../img/details.jpg")
+
+            .maker.none
+                .out
+                    p 冻结时间 ：
+                        span
+                    p 执行者 ：
+                        span
+                    p 冻结原因 ：
+                        span
+                    .btn.btn-primary 确定

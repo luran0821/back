@@ -1,0 +1,38 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'inquirie-bill invite-code'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header  查询账单
+                        ul
+            .center
+                .generate
+                    input.form-control.input-sm(placeholder="UID")
+                    .btn.btn-primary 查询
+                .col-lg-12
+                    table#table-bill.table.table-bordered.table-hover.dataTable.no-footer
+                        thead
+                            tr
+                                th 时间
+                                th 类型
+                                th 来源
+                                th 数量
+                        tbody#tbody
+                            tr.gradeA
+                                td
+                                td
+                                td
+                                td
+                    //.btn.btn-primary.btnmore 再加载一百条
+block script
+    script#dotpl-inquirie(type='text/x-dot-template')
+        |{{ for(var i=0;i<=it[0].length-1;i++) { }}
+        tr
+            | {{ for(var v = 0; v<it.length; v++ ) { }}
+            td {{=it[v][i]}}
+            | {{ } }}
+        |{{ } }}

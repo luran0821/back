@@ -1,0 +1,49 @@
+extends ../layout/layout
+block html
+    -var bodyClass = 'line-statistics'
+block body
+    include ../modules/navigation
+        block center
+            .title
+                .row
+                    .col-lg-12
+                        h4.page-header 用户分析
+                        ul
+                            li
+                                a(href="./user-analysis.html") 用户统计
+                            li.active
+                                a(href="javascript:void(0);") 下线统计
+            .center
+                .top
+                    //.choice
+                    //    .btn 人数
+                    //    .btn 贡献
+                    //.line
+                .content
+                    .distribution
+                        h4 下线人数TOP100
+                        .btn.btn-primary.btnist 切换二级人数
+                        .col-lg-12
+                            table#line-statistics.table.table-bordered.table-hover.dataTable.no-footer
+                                thead
+                                    tr
+                                        th 序号
+                                        th 用户名
+                                        th UID
+                                        th 一级人数
+                                tbody#tbody
+                                    tr.gradeA
+                                        td
+                                        td
+                                        td
+                                        td
+
+block script
+    script#dotpl-line(type='text/x-dot-template')
+        |{{ for(i in it.DATA) { }}
+        tr
+            td {{=it.us_index[i]}}
+            td {{=it.DATA[2]}}
+            td {{=it.us_uid[i]}}
+            td {{=it.DATA[i]}}
+        |{{ } }}
